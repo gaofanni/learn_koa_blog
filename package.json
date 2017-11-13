@@ -1,0 +1,35 @@
+{
+  "name": "learn_koa_blog",
+  "version": "1.0.0",
+  "description": "learn_koa_blog",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaofanni/learn_koa_blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaofanni/learn_koa_blog/issues"
+  },
+  "homepage": "https://github.com/gaofanni/learn_koa_blog#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-mysql-session": "^0.0.2",
+    "koa-router": "^7.3.0",
+    "koa-session-minimal": "^3.0.4",
+    "koa-static": "^4.0.1",
+    "koa-views": "^6.1.2",
+    "md5": "^2.2.1",
+    "moment": "^2.19.2",
+    "mysql": "^2.15.0"
+  }
+}
