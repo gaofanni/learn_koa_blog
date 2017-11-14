@@ -1,7 +1,7 @@
-const router = require('koa-router')
+const router = require('koa-router')()
 
 router.get('/signup',async(ctx,next)=>{
-    ctx.render('signup',{
+    await ctx.render('signup',{
 
     })
 })

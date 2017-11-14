@@ -1,8 +1,8 @@
 const Koa = require('koa')
 const path = require('path')
 const bodyParser = require('koa-bodyparser')
-const ejs = requre('ejs')
-const session = requre('koa-session-minimal')
+const ejs = require('ejs')
+const session = require('koa-session-minimal')
 const MysqlStore = require('koa-mysql-session')
 const config = require('./config/default')
 const router = require('koa-router')
@@ -44,6 +44,6 @@ app.use(require('./routers/signup.js').routes())
 
 
 //监听端口
-app.listen(7000)
+app.listen(config.port)
 
 console.log('listening on port'+config.port)
