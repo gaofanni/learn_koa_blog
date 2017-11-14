@@ -40,8 +40,10 @@ app.use(views(
 app.use(bodyParser())
 
 //配置路由
+app.use(require('./routers/signup.js').routes())
+
 
 //监听端口
-app.listen(config.port)
+app.listen(7000)
 
 console.log('listening on port'+config.port)
