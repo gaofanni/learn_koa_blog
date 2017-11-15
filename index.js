@@ -5,7 +5,7 @@ const ejs = require('ejs')
 const session = require('koa-session-minimal')
 const MysqlStore = require('koa-mysql-session')
 const config = require('./config/default')
-const router = require('koa-router')
+// const router = require('koa-router')
 const views=require('koa-views')
 const koaStatic = require('koa-static')
 const app = new Koa()
@@ -37,10 +37,14 @@ app.use(views(
 ))
 
 //表单解析中间件
+//解析提交的数据，使得ctx.request.body可以得到数据
 app.use(bodyParser())
 
 //配置路由
 app.use(require('./routers/signup.js').routes())
+app.use(require('./routers/signin.js').routes())
+app.use(require('./routers/posts.js').routes())
+app.use(require('./routers/signout.js').routes())
 
 
 //监听端口
