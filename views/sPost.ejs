@@ -1,6 +1,7 @@
-<% include header %>    
+<% include header %>
 <div class="spost">
     <p class="spost_user">author: <a href="/posts?author=<%= posts[0]['name'] %>"><%= posts[0]['name'] %></a></p>
+    
     <div class="post_title">
         <h3>title</h3>
         <p><a href="/posts/<%= posts[0]['id'] %>"><%= posts[0]['title'] %></a></p>
@@ -25,7 +26,7 @@
                             $('.success').text('删除文章成功')
                             fade('.success')
                             setTimeout(()=>{
-                                    window.location.href="/posts"   
+                                    window.location.href="/posts"	
                             },1000)
                         }else if(msg.data==2){
                             $('.error').text('删除文章失败')
@@ -47,7 +48,7 @@
             <div class="cmt_lists">
                 <p></p>
                 <p class="cmt_content">
-                    content: <%= res['content'] %>
+                    <%= res['content'] %>
                     <span class="cmt_name">
                         By: <%= res['name'] %>
                         <% if(session && session.user ===  res['name']  ){ %>
@@ -84,12 +85,14 @@
                 })
             </script>
         <% }) %>
-    </div>  
+    </div>	
     <% if(session.user){ %>
     <form class="form" method="post" action="/<%= posts[0]['id'] %>">
         <textarea name="content" id=""></textarea>
         <div class="submit">发表留言</div>
     </form>
+    <% } else{ %>
+        <p class="tips">登录之后才可以评论哟</p>
     <% } %>
 </div>
 <script>
@@ -101,18 +104,18 @@
             cache: false,
             dataType: 'json',
             success: function (msg) {
-               if (msg) {
+                if (msg) {
                     $('.success').text('发表留言成功')
                     fade('.success')
                     setTimeout(()=>{
                         window.location.reload()
-                    },1000)     
-               }
+                    },1000)  	
+                }
             },
             error: function () {
                 alert('异常');
             }
         })
     })
-</script>   
+</script>
 <% include footer %>
